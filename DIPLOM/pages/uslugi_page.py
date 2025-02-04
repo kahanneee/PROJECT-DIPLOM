@@ -11,7 +11,7 @@ class UslugiPage(BasePage):
     HEADER = (By.CSS_SELECTOR, "div.heading h1")  # Заголовок страницы
     SERVICE_CARDS = (By.CSS_SELECTOR, ".col-lg-4")  # Карточки услуг
     FIRST_SERVICE_TITLE = (By.CSS_SELECTOR, ".col-lg-4 .title h3")  # Заголовок первой услуги
-    CONTACT_BUTTON = (By.CSS_SELECTOR, "a[href='https://ormea.pl/kontakt/']")  # Кнопка "Связаться"
+    CONTACT_BUTTON = (By.CSS_SELECTOR, "div.fixed-contact[data-bs-title='Kontakt']")  # Кнопка "Связаться"
 
     def get_header_text(self):
         return WebDriverWait(self.driver, 20).until(

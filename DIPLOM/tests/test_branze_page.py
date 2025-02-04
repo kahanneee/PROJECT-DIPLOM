@@ -12,7 +12,7 @@ def setup(driver):
     branze_page = BranzePage(driver)
     branze_page.open()
     yield branze_page
-
+    
 @allure.feature("Футер")
 def test_footer_is_displayed(setup):
     branze_page = setup
@@ -44,8 +44,8 @@ def test_email_link_is_displayed(setup):
     with allure.step("Проверка видимости email-ссылки"):
         assert branze_page.is_email_link_displayed(), "Email-ссылка не отображается"
 
+@allure.feature("скрыт ли элемент через CSS")
 def is_element_hidden(driver, locator):
-    """Проверяет, скрыт ли элемент через CSS (visibility: hidden или opacity: 0)."""
     element = driver.find_element(*locator)
     style = element.value_of_css_property("visibility")
     opacity = element.value_of_css_property("opacity")

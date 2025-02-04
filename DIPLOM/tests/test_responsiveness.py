@@ -1,5 +1,7 @@
 import allure
 import pytest
+import time
+import requests
 from pages.home_page import HomePage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -85,4 +87,35 @@ class TestResponsiveness:
                 assert "ru" in driver.current_url, "Переход на русскую версию сайта не произошел"
             except Exception as e:
                 pytest.fail(f"Не удалось перейти на русскую версию сайта: {e}")
-                
+
+@allure.story("Проверка оптимизации изображений")
+def test_image_optimization(setup):
+    home_page = setup
+    max_image_size_kb = 500  
+
+    with allure.step("Открытие главной страницы"):
+        home_page.open("https://ormea.pl/")
+
+    with allure.step("Поиск всех изображений на странице"):
+        images = home_page.driver.find_elements(By.TAG_NAME, "img")
+        assert len(images) > 0, "На странице не найдено изображений"
+
+    with allure.step("Проверка размера каждого изображения"):
+        for image in images:
+            src = image.get_attribute("src")
+            if src:  
+                response = requests.get(src, stream=True)
+                image_size_kb = int(response.headers.get("content-length", 0)) / 1024
+
+                allure.attach(
+                    f"Изображение: {src}\nРазмер: {image_size_kb:.2f} КБ\nДопустимый размер: {max_image_size_kb} КБ",
+                    name="Информация о размере изображения",
+                    attachment_type=allure.attachment_type.TEXT
+                )
+
+                if image_size_kb > max_image_size_kb:
+                    allure.attach(
+                        f"Изображение {src} имеет размер {image_size_kb:.2f} КБ, что превышает допустимый размер {max_image_size_kb} КБ",
+                        name="Превышение размера изображения",
+                        attachment_type=allure.attachment_type.TEXT
+                    )
