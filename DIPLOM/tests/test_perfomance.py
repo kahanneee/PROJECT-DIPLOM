@@ -22,7 +22,6 @@ def test_page_load_time(setup):
     with allure.step(f"Проверка, что страница загрузилась за {max_load_time} секунд"):
         assert load_time <= max_load_time, f"Страница загрузилась за {load_time} секунд, что превышает допустимое время {max_load_time} секунд"          
 
-# Проверка, что время отклика главной страницы меньше 3 секунд
 @allure.feature("Замер времени отклика")
 def test_response_time():
     driver = webdriver.Chrome()

@@ -6,7 +6,7 @@ from pages.home_page import HomePage
 @pytest.fixture(scope="function")
 def driver():
     options = webdriver.ChromeOptions()
-#   options.add_argument("--headless")  # Запуск в headless-режиме
+    options.add_argument("--headless")  
     driver = webdriver.Chrome(options=options)
     yield driver
     driver.quit()

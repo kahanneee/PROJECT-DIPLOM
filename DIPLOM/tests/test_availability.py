@@ -4,7 +4,6 @@ import pytest
 from selenium.webdriver.common.by import By
 import allure
 
-# Функция для проверки доступности с помощью axe-core
 @allure.feature("Accessibility Testing")
 def test_accessibility():
     driver = webdriver.Chrome()
@@ -37,7 +36,6 @@ def test_accessibility():
         with allure.step("Закрываем браузер"):
             driver.quit()
 
-# Функция для проверки контрастности 
 @allure.feature("Contrast Testing")
 def test_contrast():
     driver = webdriver.Chrome()

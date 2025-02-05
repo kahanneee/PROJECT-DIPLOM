@@ -8,10 +8,10 @@ class UslugiPage(BasePage):
         super().__init__(driver) 
         self.driver = driver
     
-    HEADER = (By.CSS_SELECTOR, "div.heading h1")  # Заголовок страницы
-    SERVICE_CARDS = (By.CSS_SELECTOR, ".col-lg-4")  # Карточки услуг
-    FIRST_SERVICE_TITLE = (By.CSS_SELECTOR, ".col-lg-4 .title h3")  # Заголовок первой услуги
-    CONTACT_BUTTON = (By.CSS_SELECTOR, "div.fixed-contact[data-bs-title='Kontakt']")  # Кнопка "Связаться"
+    HEADER = (By.CSS_SELECTOR, "div.heading h1")  
+    SERVICE_CARDS = (By.CSS_SELECTOR, ".col-lg-4")  
+    FIRST_SERVICE_TITLE = (By.CSS_SELECTOR, ".col-lg-4 .title h3")  
+    CONTACT_BUTTON = (By.CSS_SELECTOR, "div.fixed-contact[data-bs-title='Kontakt']")  
 
     def get_header_text(self):
         return WebDriverWait(self.driver, 20).until(

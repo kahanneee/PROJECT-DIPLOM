@@ -29,7 +29,6 @@ class BranzePage(BasePage):
             raise TimeoutException(f"Страница не загрузилась в течение {timeout} секунд.")
     
     def is_footer_displayed(self):
-        """Проверяет, отображается ли футер (нижнее поле со всей информацией)."""
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         footer = self.wait_for_element(self.FOOTER)
         return footer.is_displayed()

@@ -48,11 +48,9 @@ class HomePage(BasePage):
         linkedin_link.click()
 
     def is_linkedin_page_opened(self):
-    # Переключение на новую вкладку
         WebDriverWait(self.driver, 20).until(lambda d: "linkedin.com" in d.current_url)
         return "linkedin.com" in self.driver.current_url
-    
-    # Ожидание загрузки страницы LinkedIn
+       
         WebDriverWait(self.driver, 20).until(lambda d: "linkedin.com" in d.current_url)
         return "linkedin.com" in self.driver.current_url
     

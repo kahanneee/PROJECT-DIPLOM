@@ -15,7 +15,7 @@ class TestResponsiveness:
         page.open("https://ormea.pl/")
 
         with allure.step("Установка размера окна для мобильного устройства (375x812)"):
-            driver.set_window_size(375, 812)  # Размер экрана iPhone 
+            driver.set_window_size(375, 812)  
 
         with allure.step("Проверка видимости элементов на мобильном устройстве"):
             assert page.get_logo().is_displayed(), "Логотип не отображается на мобильном устройстве"
@@ -63,7 +63,7 @@ class TestResponsiveness:
         page.open("https://ormea.pl/")
 
         with allure.step("Установка размера окна для планшета (768x1024)"):
-            driver.set_window_size(768, 1024)  # Размер экрана iPad
+            driver.set_window_size(768, 1024) 
 
         with allure.step("Проверка видимости элементов на планшете"):
             assert page.get_logo().is_displayed(), "Логотип не отображается на планшете"

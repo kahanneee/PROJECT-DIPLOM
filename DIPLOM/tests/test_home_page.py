@@ -90,4 +90,4 @@ def test_linkedin_link_redirects_correctly(setup):
     with allure.step("Закрытие вкладки LinkedIn и возврат на главную страницу"):
         if len(home_page.driver.window_handles) > 1:
             home_page.driver.close() 
-            home_page.driver.switch_to.window(home_page.driver.window_handles[0])  # Переключаемся на главную вкладку
+            home_page.driver.switch_to.window(home_page.driver.window_handles[0])  
