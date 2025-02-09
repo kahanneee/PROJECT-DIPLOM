@@ -6,7 +6,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium import webdriver
-
 from selenium.webdriver.chrome.options import Options
 from urllib.parse import urljoin
 
@@ -111,9 +110,9 @@ def test_slow_internet_connection(driver_stability):
         driver_stability.execute_cdp_cmd(
             "Network.emulateNetworkConditions", {
                 "offline": False,
-                "latency": 200,  # Задержка в мс
-                "downloadThroughput": 500 * 1024 / 8,  # Пропускная способность в Kbps (преобразована в байты/с)
-                "uploadThroughput": 500 * 1024 / 8  # Пропускная способность в Kbps (преобразована в байты/с)
+                "latency": 200, 
+                "downloadThroughput": 500 * 1024 / 8,  
+                "uploadThroughput": 500 * 1024 / 8  
             }
         )
 

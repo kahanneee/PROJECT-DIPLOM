@@ -4,7 +4,7 @@ import sqlite3
 
 @pytest.fixture(scope="module")
 def db_connection():
-    conn = sqlite3.connect(":memory:")  # Временная БД в памяти
+    conn = sqlite3.connect(":memory:") 
     yield conn
     conn.close()
 

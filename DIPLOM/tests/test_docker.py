@@ -5,7 +5,6 @@ import pytest
 @allure.feature("Работа с Docker")
 @allure.story("Запуск и проверка контейнера")
 def test_run_docker_container():
-    # Дополнительная проверка на наличие Docker Daemon
     try:
         client = docker.from_env()
     except docker.errors.DockerException as e:
