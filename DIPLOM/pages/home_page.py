@@ -13,6 +13,7 @@ class HomePage(BasePage):
     MENU_BOTTON = (By.CSS_SELECTOR, "button[aria-label='Toggle navigation']")
     LINKEDIN_LINK = (By.CSS_SELECTOR, "a.nav-link[href*='linkedin.com']")
     CLOSE_BUTTON = (By.CSS_SELECTOR, "svg.artdeco-icon[aria-busy='false']")
+    LOGO_CLICK = (By.CSS_SELECTOR, "a.navbar-brand")
         
     def __init__(self, driver):
         self.driver = driver
@@ -23,11 +24,11 @@ class HomePage(BasePage):
     def get_logo(self):
         return self.wait_for_element(self.LOGO)
 
-    def get_contact_phone(self):
-        return self.wait_for_element(self.CONTACT_PHONE)
+    def get_contact_phone_locator(self):
+        return self.CONTACT_PHONE
 
-    def get_contact_email(self):
-        return self.wait_for_element(self.CONTACT_EMAIL)
+    def get_contact_email_locator(self):
+        return self.CONTACT_EMAIL
 
     def get_service_form(self):
         return self.wait_for_element(self.FORM)
@@ -62,3 +63,11 @@ class HomePage(BasePage):
             close_button.click()
         except Exception as e:
             print(f"Не удалось закрыть модальное окно: {e}")    
+            
+    def click_logo(self):
+        logo = self.wait_for_element(self.LOGO_CLICK)
+        logo.click()
+
+    def is_logo_displayed(self):
+        logo = self.wait_for_element(self.LOGO_CLICK)
+        return logo.is_displayed()

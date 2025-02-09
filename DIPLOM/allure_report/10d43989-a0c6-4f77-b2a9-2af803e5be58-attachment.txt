@@ -1,0 +1,70 @@
+
+Windows IP Configuration
+
+No operation can be performed on Po��czenie lokalne* 1 while it has its media disconnected.
+No operation can be performed on Ethernet 2 while it has its media disconnected.
+No operation can be performed on Po��czenie sieciowe Bluetooth while it has its media disconnected.
+
+Wireless LAN adapter Po��czenie lokalne* 1:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+
+Wireless LAN adapter Po��czenie lokalne* 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . : play.pl
+   IPv6 Address. . . . . . . . . . . : 2a02:a311:40c4:c400:64c6:875e:c588:5ef0
+   Link-local IPv6 Address . . . . . : fe80::ed19:c466:b214:2cd8%13
+   Default Gateway . . . . . . . . . : fe80::5667:51ff:fe46:5c28%13
+
+Ethernet adapter Ethernet 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+
+Ethernet adapter Po��czenie sieciowe Bluetooth:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+
+Windows IP Configuration
+
+No operation can be performed on Po��czenie lokalne* 1 while it has its media disconnected.
+No operation can be performed on Po��czenie lokalne* 2 while it has its media disconnected.
+No operation can be performed on Ethernet 2 while it has its media disconnected.
+No operation can be performed on Po��czenie sieciowe Bluetooth while it has its media disconnected.
+
+Wireless LAN adapter Po��czenie lokalne* 1:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+
+Wireless LAN adapter Po��czenie lokalne* 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . : home
+   IPv6 Address. . . . . . . . . . . : 2a02:a311:40c4:c400:64c6:875e:c588:5ef0
+   Link-local IPv6 Address . . . . . : fe80::ed19:c466:b214:2cd8%13
+   IPv4 Address. . . . . . . . . . . : 192.168.0.136
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : fe80::5667:51ff:fe46:5c28%13
+                                       192.168.0.1
+
+Ethernet adapter Ethernet 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+
+Ethernet adapter Po��czenie sieciowe Bluetooth:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 

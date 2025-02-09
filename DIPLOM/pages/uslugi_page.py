@@ -4,15 +4,28 @@ from selenium.webdriver.support import expected_conditions as EC
 from .base_page import BasePage
 
 class UslugiPage(BasePage):
-    def __init__(self, driver):
-        super().__init__(driver) 
-        self.driver = driver
     
     HEADER = (By.CSS_SELECTOR, "div.heading h1")  
     SERVICE_CARDS = (By.CSS_SELECTOR, ".col-lg-4")  
     FIRST_SERVICE_TITLE = (By.CSS_SELECTOR, ".col-lg-4 .title h3")  
     CONTACT_BUTTON = (By.CSS_SELECTOR, "div.fixed-contact[data-bs-title='Kontakt']")  
 
+    def __init__(self, driver):
+        super().__init__(driver)
+
+    def open(self, url="https://ormea.pl/uslugi/"):
+        self.driver.get(url)
+        self.wait_for_page_to_load()
+        
+    def wait_for_page_to_load(self, timeout=20):
+        try:
+            WebDriverWait(self.driver, timeout).until(
+                lambda driver: driver.execute_script("return document.readyState") == "complete"
+            )
+        except TimeoutException:
+            self.driver.save_screenshot("page_load_timeout.png")
+            raise TimeoutException(f"Страница не загрузилась в течение {timeout} секунд.")   
+        
     def get_header_text(self):
         return WebDriverWait(self.driver, 20).until(
             EC.visibility_of_element_located(self.HEADER)
